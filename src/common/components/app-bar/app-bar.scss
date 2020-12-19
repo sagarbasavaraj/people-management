@@ -1,0 +1,10 @@
+@import "../../../design-tokens/variables.scss";
+
+.navbar {
+  background: $white;
+  height: 80px;
+
+  .user-info {
+    margin-left: auto;
+  }
+}

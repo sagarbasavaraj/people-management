@@ -1,0 +1,79 @@
+@import "../../../design-tokens/variables.scss";
+
+.dropdown-wrapper {
+  position: relative;
+  user-select: none;
+  width: 100%;
+
+  .dropdown-label {
+    color: $desaturated-dark-blue;
+    font-size: $font-13;
+
+    &.open {
+      color: $soft-blue;
+    }
+  }
+
+  .dropdown-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .dropdown-select__trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 22px 0 0;
+      font-size: $font-20;
+      line-height: 24px;
+      color: $steel-blue;
+      cursor: pointer;
+      border-bottom: 1px solid $light-greyish-blue;
+
+      & .dropdown-arrow {
+        color: $desaturated-dark-blue;
+        transition: transform 0.1s ease-in-out;
+      }
+
+      &.open {
+        border-bottom: 1.5px solid $soft-blue;
+
+        .dropdown-arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .dropdown-options {
+      position: absolute;
+      display: block;
+      top: 100%;
+      left: 0;
+      right: 0;
+      border: none;
+      background: $white;
+      transition: all 0.5s;
+      z-index: 2;
+      border: 1px solid $soft-blue;
+      border-radius: 0.25rem;
+      margin: 0.125rem 0 0;
+      color: $steel-blue;
+      padding: 0.5rem 0;
+
+      .dropdown-option {
+        position: relative;
+        display: block;
+        padding: 0.25rem 1.5rem;
+        font-size: $font-20;
+        cursor: pointer;
+        color: inherit;
+
+        &:hover,
+        &.selected {
+          background: #f8f9fa;
+        }
+      }
+    }
+  }
+}

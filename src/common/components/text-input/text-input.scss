@@ -1,0 +1,43 @@
+@import "../../../design-tokens/variables.scss";
+
+.text-input__container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+
+  .input-label {
+    display: block;
+    transform-origin: top left;
+    position: absolute;
+    top: -18px;
+    left: 0;
+    font-size: $font-13;
+    color: $dark-blue;
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    line-height: 1;
+
+    &.focused {
+      color: $soft-blue;
+      line-height: 16px;
+    }
+  }
+
+  input[type="text"] {
+    border: 0;
+    border-bottom: 1px solid $light-greyish-blue;
+    width: 100%;
+    font-size: $font-20;
+    line-height: 24px;
+    color: $steel-blue;
+
+    &:focus {
+      border-bottom: 1.5px solid $soft-blue;
+    }
+    outline: none;
+    background: transparent;
+  }
+}

@@ -1,0 +1,19 @@
+@import "../../design-tokens/variables.scss";
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+
+  h1.title {
+    font-size: $font-26;
+    font-weight: 500;
+    color: $dark-blue;
+    flex-grow: 1;
+
+    & .sub-title {
+      color: $desaturated-dark-blue;
+      font-size: $font-13;
+    }
+  }
+}
