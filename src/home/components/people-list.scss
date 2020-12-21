@@ -1,0 +1,59 @@
+@import "../../design-tokens/variables.scss";
+
+.people-list-container {
+  position: relative;
+  display: grid;
+  row-gap: 10px;
+
+  li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    &.people-list-header {
+      padding: 0 20px;
+      font-size: $font-12;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 20px;
+      color: $desaturated-dark-blue;
+    }
+
+    &.people-list-item {
+      background: $white;
+      padding: 30px 20px;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+
+      & > label {
+        color: $steel-blue;
+
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+
+          .name-text {
+            font-size: $font-18;
+            font-weight: 600;
+            line-height: 22px;
+            color: $dark-blue;
+          }
+          .dob-text {
+            font-size: $font-14;
+            line-height: 22px;
+            color: $desaturated-dark-blue;
+          }
+        }
+        .salary-sub-text {
+          margin-left: 5px;
+          font-size: $font-13;
+          line-height: 18px;
+          color: $desaturated-dark-blue;
+        }
+      }
+      button[type = "button"] {
+          justify-self: end;
+      }
+    }
+  }
+}

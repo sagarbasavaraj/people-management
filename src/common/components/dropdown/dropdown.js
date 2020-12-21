@@ -18,7 +18,7 @@ function Dropdown({
 
   const handleOutsideClick = (e) => {
     const select = dropdownSelectRef.current;
-    if (!select.contains(e.target)) {
+    if (select && !select.contains(e.target)) {
       setOpen(false);
     }
   };

@@ -1,7 +1,8 @@
 @import "../../../design-tokens/variables.scss";
 
 .helper-text {
-  color: $dark-blue;
+  color: $desaturated-dark-blue;
   font-size: $font-13;
   line-height: 16px;
+  margin-top: 10px;
 }
