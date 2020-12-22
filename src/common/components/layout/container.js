@@ -12,7 +12,7 @@ function Container({ children, className }) {
 
 Container.propTypes = {
   className: string,
-  children: node,
+  children: node
 };
 
 export default Container;

@@ -19,16 +19,23 @@ function Button({
   fluid = false,
   icon,
   size = "normal",
+  disabled,
 }) {
   const btnClassNames = classnames("btn", {
     "btn-outline": outline,
     rounded,
     fluid,
     [size]: !!size,
+    disabled,
   });
   const iconClassName = classnames("icon far", { [icon]: !!icon });
   return (
-    <button type={type} className={btnClassNames} onClick={onClick}>
+    <button
+      type={type}
+      className={btnClassNames}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {icon && <i className={iconClassName}></i>}
       {label}
     </button>
@@ -52,6 +59,8 @@ Button.propTypes = {
   size: oneOf(["normal", "medium"]),
   /** icon with button */
   icon: string,
+  /** Disabled or not */
+  disabled: bool,
 };
 
 export default Button;

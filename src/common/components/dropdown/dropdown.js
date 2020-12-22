@@ -109,7 +109,7 @@ Dropdown.propTypes = {
   /** Callback which will be called on select of option  */
   onSelect: func.isRequired,
   /** Helper text */
-  helperText: string,
+  helperText: string
 };
 
 export default Dropdown;

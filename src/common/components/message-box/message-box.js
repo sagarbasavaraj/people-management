@@ -25,7 +25,7 @@ MessageBox.propTypes = {
   /** Message to be displayed */
   message: string,
   /** type can error or success */
-  type: oneOf(["success", "error"]),
+  type: oneOf(["success", "error"])
 };
 
 export default MessageBox;

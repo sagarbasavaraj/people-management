@@ -30,7 +30,7 @@ ButtonGroup.propTypes = {
   /** Items which are rendered as Buttons */
   children: node,
   /** Style of button group container */
-  className: string,
+  className: string
 };
 
 export default ButtonGroup;

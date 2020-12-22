@@ -73,7 +73,7 @@ TextInput.propTypes = {
   className: string,
   inputClassName: string,
   type: string,
-  placeholder: string,
+  placeholder: string
 };
 
 export default TextInput;
