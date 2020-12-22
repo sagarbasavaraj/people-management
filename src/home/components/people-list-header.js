@@ -2,7 +2,7 @@ import React from "react";
 
 const HEADERS = ["Employee", "Job Title", "Country", "Salary"];
 
-function PeopleListHeader({ he }) {
+function PeopleListHeader() {
   return (
     <li className="people-list-header">
       {HEADERS.map((header) => (

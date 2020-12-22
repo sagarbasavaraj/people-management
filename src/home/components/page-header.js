@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "../../common/components";
+import { number, func } from "prop-types";
 import "./page-header.scss";
 
-function PageHeader({ numberOfPeople = 3, onAddEmployeeBtnClick }) {
+function PageHeader({ numberOfPeople, onAddEmployeeBtnClick }) {
   return (
     <div className="page-header">
       <h1 className="title">
@@ -17,5 +18,10 @@ function PageHeader({ numberOfPeople = 3, onAddEmployeeBtnClick }) {
     </div>
   );
 }
+
+PageHeader.propTypes = {
+  numberOfPeople: number,
+  onAddEmployeeBtnClick: func.isRequired,
+};
 
 export default PageHeader;

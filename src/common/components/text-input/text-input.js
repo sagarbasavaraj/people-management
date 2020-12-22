@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import HelperText from "../typograhy/helper-text";
+import { string, func } from "prop-types";
 import "./text-input.scss";
 
 function TextInput({
@@ -42,9 +43,12 @@ function TextInput({
   };
   return (
     <div className={containerClassName}>
-      <label className={labelClassName}>{label}</label>
+      <label htmlFor={name} className={labelClassName}>
+        {label}
+      </label>
       <input
         type={type}
+        id={name}
         className={textInputClassName}
         name={name}
         value={value}
@@ -57,5 +61,19 @@ function TextInput({
     </div>
   );
 }
+
+TextInput.propTypes = {
+  name: string.isRequired,
+  value: string,
+  label: string.isRequired,
+  onChange: func.isRequired,
+  helperText: string,
+  onBlur: func,
+  onFocus: func,
+  className: string,
+  inputClassName: string,
+  type: string,
+  placeholder: string,
+};
 
 export default TextInput;

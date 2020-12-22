@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import HelperText from "../typograhy/helper-text";
 import classnames from "classnames";
+import { string, arrayOf, func } from "prop-types";
 import "./dropdown.scss";
 
 function Dropdown({
@@ -8,7 +9,7 @@ function Dropdown({
   name,
   value,
   options = [],
-  onClick,
+  onSelect,
   helperText = "",
 }) {
   const [open, setOpen] = useState(false);
@@ -36,19 +37,31 @@ function Dropdown({
 
   const handleOptionClick = (e) => {
     const value = e.target.getAttribute("data-value");
-    onClick({ name, value });
+    //make custom event structure so that while extracting value it will be consistent with text input
+    onSelect({ target: { name, value } });
   };
 
   return (
-    <div className="dropdown-wrapper" onClick={handleDropdownClick}>
-      <label className={labelClassName}>{label}</label>
+    <div
+      className="dropdown-wrapper"
+      onClick={handleDropdownClick}
+      aria-haspopup="listbox"
+    >
+      <label id={label} className={labelClassName}>
+        {label}
+      </label>
       <div className="dropdown-select" ref={dropdownSelectRef}>
         <div className={triggerClassName}>
           <span>{value}</span>
           <i className="fas fa-chevron-down dropdown-arrow"></i>
         </div>
         {open && (
-          <div className="dropdown-options" onClick={handleOptionClick}>
+          <div
+            className="dropdown-options"
+            onClick={handleOptionClick}
+            role="listbox"
+            aria-labelledby={label}
+          >
             {options.map((option) => {
               const optionClassName = classnames("dropdown-option", {
                 selected: option === value,
@@ -58,6 +71,8 @@ function Dropdown({
                   key={option}
                   className={optionClassName}
                   data-value={option}
+                  role="option"
+                  aria-selected={option === value}
                 >
                   {option}
                 </span>
@@ -70,5 +85,14 @@ function Dropdown({
     </div>
   );
 }
+
+Dropdown.propTypes = {
+  label: string.isRequired,
+  name: string.isRequired,
+  value: string,
+  options: arrayOf(string),
+  onSelect: func.isRequired,
+  helperText: string,
+};
 
 export default Dropdown;

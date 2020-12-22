@@ -5,6 +5,7 @@ import TextInput from "./text-input/text-input";
 import HelperText from "./typograhy/helper-text";
 import Dropdown from "./dropdown/dropdown";
 import ButtonGroup from "./button-group/button-group";
+import MessageBox from "./message-box/message-box";
 
 export {
   Container,
@@ -14,5 +15,6 @@ export {
   HelperText,
   Dropdown,
   ButtonGroup,
+  MessageBox
 };
 export { Card, CardContent, CardActions, CardHeader } from "./card";

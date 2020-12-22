@@ -1,4 +1,5 @@
 import React from "react";
+import { string } from "prop-types";
 import classnames from "classnames";
 
 function CardHeader({ title, description, className }) {
@@ -13,5 +14,11 @@ function CardHeader({ title, description, className }) {
     </div>
   );
 }
+
+CardHeader.propTypes = {
+  title: string,
+  description: string,
+  className: string,
+};
 
 export default CardHeader;

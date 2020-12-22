@@ -4,26 +4,28 @@
   position: relative;
   display: grid;
   row-gap: 10px;
+  margin-bottom: 30px;
 
   li {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
 
     &.people-list-header {
-      padding: 0 20px;
       font-size: $font-12;
       text-transform: uppercase;
       font-weight: 600;
       line-height: 20px;
       color: $desaturated-dark-blue;
+      padding: 0 30px;
     }
 
     &.people-list-item {
       background: $white;
-      padding: 30px 20px;
       align-items: center;
       border-radius: 10px;
       box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+      padding: 30px;
 
       & > label {
         color: $steel-blue;
@@ -31,6 +33,7 @@
         &:first-child {
           display: flex;
           flex-direction: column;
+          word-break: break-word;
 
           .name-text {
             font-size: $font-18;

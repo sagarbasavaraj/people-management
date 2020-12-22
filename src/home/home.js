@@ -1,30 +1,15 @@
 import React from "react";
-import { Container } from "../common/components";
+import { Container, MessageBox } from "../common/components";
 import { useHistory } from "react-router-dom";
+import { keys } from "lodash";
+import useDataApi from "../hooks/use-data-api";
 import PageHeader from "./components/page-header";
 import PeopleList from "./components/people-list";
 
-const employess = [
-  {
-    id: 34234,
-    name: "Ann Henry",
-    dateOfBirth: "04/12/1990",
-    jobTitle: "Product Manager",
-    country: "United States",
-    salary: "60,000 USD",
-  },
-  {
-    id: 34294,
-    name: "Ann Henry",
-    dateOfBirth: "04/12/1990",
-    jobTitle: "Product Manager",
-    country: "United States",
-    salary: "60,000 USD",
-  },
-];
-
 function Home() {
   const history = useHistory();
+  const [response] = useDataApi({ url: "getAll", initialData: {} });
+  const { data, error } = response;
 
   const handleAddEditEmployeeBtnClick = (item) => {
     history.push(`/add-edit-people/${(item && item.id) || ""}`);
@@ -32,11 +17,12 @@ function Home() {
 
   return (
     <Container>
-      <PageHeader onAddEmployeeBtnClick={handleAddEditEmployeeBtnClick} />
-      <PeopleList
-        data={employess}
-        onEditEmployee={handleAddEditEmployeeBtnClick}
+      {error && <MessageBox message={error.message} type="error" />}
+      <PageHeader
+        numberOfPeople={keys(data).length}
+        onAddEmployeeBtnClick={handleAddEditEmployeeBtnClick}
       />
+      <PeopleList data={data} onEditEmployee={handleAddEditEmployeeBtnClick} />
     </Container>
   );
 }
