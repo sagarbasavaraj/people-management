@@ -1,5 +1,12 @@
 @import "../../../design-tokens/variables.scss";
 
+$btn-default-height: 40px;
+$btn-radius: 5px;
+$normal-btn-width: 145px;
+$medium-btn-width: 180px;
+$medium-btn-height: 45px;
+$btn-fuild-width: 100%;
+
 .btn {
   display: inline-block;
   font-size: $font-16;
@@ -7,16 +14,19 @@
   outline: none;
   background-color: $soft-blue;
   text-align: center;
-  height: 40px;
-  border-radius: 5px;
+  height: $btn-default-height;
+  border-radius: $btn-radius;
   cursor: pointer;
   color: $white;
   border: none;
-  width: 140px;
+
+  &.normal {
+    width: $normal-btn-width;
+  }
 
   &.medium {
-    width: 180px;
-    height: 45px;
+    width: $medium-btn-width;
+    height: $medium-btn-height;
     box-shadow: 0px 6px 12px rgba(98, 77, 227, 0.3);
   }
 
@@ -30,7 +40,7 @@
     border-radius: 50px;
   }
   &.fluid {
-    width: 100%;
+    width: $btn-fuild-width;
   }
   .icon {
     margin-right: 10px;

@@ -12,7 +12,7 @@ function PageHeader({ numberOfPeople, onAddEmployeeBtnClick }) {
       <Button
         label="Add employee"
         icon="fa-user"
-        medium
+        size="medium"
         onClick={onAddEmployeeBtnClick}
       />
     </div>

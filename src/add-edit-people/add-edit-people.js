@@ -52,9 +52,7 @@ function AddEditPeople() {
 
   return (
     <Container>
-      {error && (
-        <MessageBox message={error.message} type="error" />
-      )}
+      {error && <MessageBox message={error.message} type="error" />}
       <form className="employee-form" onSubmit={handleFormSubmit}>
         <Card>
           <CardHeader title={title} description={description} />

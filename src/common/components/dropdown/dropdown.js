@@ -4,6 +4,17 @@ import classnames from "classnames";
 import { string, arrayOf, func } from "prop-types";
 import "./dropdown.scss";
 
+/**
+ * Custom Dropdown component.
+ *
+ * <Dropdown
+ *   label="Country"
+ *   options={["Portugal", "India"]}
+ *   onSelect={() => null}
+ *   value="Portugal"
+ *   helperText="Select Country"
+ * />
+ */
 function Dropdown({
   label,
   name,
@@ -87,11 +98,17 @@ function Dropdown({
 }
 
 Dropdown.propTypes = {
+  /** Dropdown label */
   label: string.isRequired,
+  /** name of dropdown */
   name: string.isRequired,
+  /** value of dropdown */
   value: string,
+  /** list of options */
   options: arrayOf(string),
+  /** Callback which will be called on select of option  */
   onSelect: func.isRequired,
+  /** Helper text */
   helperText: string,
 };
 

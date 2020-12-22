@@ -1,8 +1,15 @@
 import React from "react";
 import classnames from "classnames";
-import { string, func, bool } from "prop-types";
+import { string, func, bool, oneOf } from "prop-types";
 import "./button.scss";
 
+/**
+ * Button component.
+ *
+ * Usage:
+ * <Button onClick={() => null} label="Test" />
+ * <Button onClick={() => null} label="Test" icon="far fa-user" />
+ */
 function Button({
   label,
   onClick,
@@ -11,21 +18,17 @@ function Button({
   outline = false,
   fluid = false,
   icon,
-  medium = false,
+  size = "normal",
 }) {
   const btnClassNames = classnames("btn", {
     "btn-outline": outline,
     rounded,
     fluid,
-    medium,
+    [size]: !!size,
   });
   const iconClassName = classnames("icon far", { [icon]: !!icon });
   return (
-    <button
-      type={type}
-      className={btnClassNames}
-      onClick={onClick}
-    >
+    <button type={type} className={btnClassNames} onClick={onClick}>
       {icon && <i className={iconClassName}></i>}
       {label}
     </button>
@@ -33,13 +36,21 @@ function Button({
 }
 
 Button.propTypes = {
+  /** Button label */
   label: string.isRequired,
+  /** Gets called when the user clicks on the button */
   onClick: func,
+  /** make button border rounded */
   rounded: bool,
+  /** type of button default to button. it can be 'submit' */
   type: string,
+  /** if true button will be with transparent background */
   outline: bool,
+  /** if true button will be full width */
   fluid: bool,
-  medium: bool,
+  /** The size of the button */
+  size: oneOf(["normal", "medium"]),
+  /** icon with button */
   icon: string,
 };
 
