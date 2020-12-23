@@ -56,6 +56,7 @@ function TextInput({
         onBlur={handleBlur}
         onFocus={handleFocus}
         placeholder={placeholder}
+        data-testid={name}
       />
       {helperText && <HelperText text={helperText} />}
     </div>

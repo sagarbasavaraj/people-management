@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { uid } from "../common/helpers/util";
 import {
   Card,
@@ -12,6 +12,7 @@ import {
 } from "../common/components";
 import EmployeeForm from "./components/employee-form";
 import useForm from "../hooks/use-form";
+import useNavigate from "../hooks/use-navigate";
 import useDataApi from "../hooks/use-data-api";
 import "./add-edit-people.scss";
 
@@ -33,7 +34,7 @@ function AddEditPeople() {
   const { data, error } = response;
   const [state, onChange] = useForm(data);
 
-  const history = useHistory();
+  const [navigateTo] = useNavigate();
   const title = id ? "Edit employee" : "Add a new employee";
   const description = id
     ? "Edit the information of your employee."
@@ -45,7 +46,7 @@ function AddEditPeople() {
   }, []);
 
   const navigate = () => {
-    history.push("/");
+    navigateTo("/");
   };
 
   const handleFormSubmit = (e) => {
