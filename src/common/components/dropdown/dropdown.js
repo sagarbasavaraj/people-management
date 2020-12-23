@@ -61,7 +61,7 @@ function Dropdown({
       <label id={label} className={labelClassName}>
         {label}
       </label>
-      <div className="dropdown-select" ref={dropdownSelectRef}>
+      <div className="dropdown-select" ref={dropdownSelectRef} data-testid="dropdown">
         <div className={triggerClassName}>
           <span>{value}</span>
           <i className="fas fa-chevron-down dropdown-arrow"></i>

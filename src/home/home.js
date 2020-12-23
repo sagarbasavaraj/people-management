@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, MessageBox } from "../common/components";
 import { useHistory } from "react-router-dom";
 import { keys } from "lodash";
@@ -10,6 +10,10 @@ function Home() {
   const history = useHistory();
   const [response] = useDataApi({ url: "getAll", initialData: {} });
   const { data, error } = response;
+
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
 
   const handleAddEditEmployeeBtnClick = (item) => {
     history.push(`/add-edit-people/${(item && item.id) || ""}`);

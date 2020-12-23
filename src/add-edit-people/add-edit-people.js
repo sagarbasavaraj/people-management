@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { uid } from "../common/helpers/util";
 import {
@@ -39,6 +39,10 @@ function AddEditPeople() {
     ? "Edit the information of your employee."
     : "Fill out the information of your new employee.";
   const actionBtnLabel = id ? "Save" : "Add employee";
+
+  useEffect(() => {
+    document.title = "Add Edit People";
+  }, []);
 
   const navigate = () => {
     history.push("/");
