@@ -106,3 +106,4 @@ App uses Indexdb to store data locally. No server is used. This is just for assi
 - Internationalization support.
 - create story book for common components. It helps new joiness to understand components and play around with it.
 - sass features can be used to automate padding, margin and border.
+- isLoading which is provided by use-data-api custom hook can be used to show spinner.
