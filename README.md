@@ -57,11 +57,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Description
 
-People Mangement  - App to manage people. User can create, read and edit people informations.
+People Mangement  - App to manage people. User can create, read and edit person informations.
 
 ## Development
 
-main branch is used for developement. Ideally need to use feature branches and raise PR to main branch.
+Main branch is used for developement. Ideally need to use feature branches and raise PR to main branch.
 
 
 Code base is structured based on screens (ex. home, add-edit-people). All related files are grouped together and kept in one folder. In this way it is easy to find files and also helps others to understand the code base easily.
@@ -79,15 +79,28 @@ src
     - components
         - page-header - Displayz page header
         - people-list - Displays people informations.
-            - people-list-header - displays list header
-            - people-list-item - Display each people item.
+        - people-list-header - displays list header
+        - people-list-item - Display each people item.
+        - people-list.scss
+    - home.test.js
 - add-edit-person
     - add-edit-person.js - Component used to add and edit people.
     - components
         - employee-form.js
     - validations.js
+    - add-edit-person.scss
+    -add-edit-person.test.js
+- hooks - Contains common hooks
+    - use-data-api: Custom hook to manage fetch and save operations
+    - use-form: Custom hook to handle form data
+    - use-navigate: Custom hook to handle navigation
+- design-tokens: Css design tokens
+    - variables.scss - contains common css themes and fonts used across the application.
+-service: Contains common services used across the applications.
+    - storage-sevrice - Service used to store and fetch data
+  
 
 ```
 ### Note
 
-App uses Indexdb to store data locally. No server is is used. This is just for assignment purpose.
+App uses Indexdb to store data locally. No server is used. This is just for assignment purpose.
