@@ -12,7 +12,7 @@ const employees = {
     birthDate: "01/12/1985",
     jobTitle: "lead",
     country: "Portugal",
-    salary: "60,000",
+    salary: "60000",
   },
 };
 
@@ -54,7 +54,7 @@ describe("Home", () => {
     expect(getByText("01/12/1985")).toBeInTheDocument();
     expect(getByText("lead")).toBeInTheDocument();
     expect(getByText("Portugal")).toBeInTheDocument();
-    expect(getByText("60,000")).toBeInTheDocument();
+    expect(getByText("60,000 USD")).toBeInTheDocument();
     expect(getByText("Edit")).toBeInTheDocument();
   });
 

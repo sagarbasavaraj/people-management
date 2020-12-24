@@ -1,7 +1,7 @@
 import { render, act } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router, Route } from "react-router-dom";
-import AddEditPerson from "./add-edit-people";
+import AddEditPerson from "./add-edit-person";
 import StorageService from "../service/storage-service";
 
 //mock storage service
