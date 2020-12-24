@@ -1,10 +1,10 @@
 import React from "react";
-import { string, func, shape } from "prop-types";
+import { string, func, shape, object } from "prop-types";
 import { TextInput, Dropdown } from "../../common/components";
 
 const COUNTRIES = ["Portugal", "India", "Germany"];
 
-function EmployeeForm({ state, onChange }) {
+function EmployeeForm({ state, onChange, errors }) {
   return (
     <div className="employee-form-container">
       <TextInput
@@ -14,6 +14,7 @@ function EmployeeForm({ state, onChange }) {
         onChange={onChange}
         name="name"
         value={state.name}
+        error={errors.name}
       />
       <TextInput
         label="Birthdate"
@@ -22,6 +23,7 @@ function EmployeeForm({ state, onChange }) {
         onChange={onChange}
         name="birthDate"
         value={state.birthDate}
+        error={errors.birthDate}
       />
       <TextInput
         label="Job title"
@@ -30,6 +32,7 @@ function EmployeeForm({ state, onChange }) {
         onChange={onChange}
         name="jobTitle"
         value={state.jobTitle}
+        error={errors.jobTitle}
       />
       <Dropdown
         label="Country"
@@ -38,6 +41,7 @@ function EmployeeForm({ state, onChange }) {
         onSelect={onChange}
         name="country"
         value={state.country}
+        error={errors.country}
       />
       <TextInput
         label="Salary"
@@ -46,6 +50,7 @@ function EmployeeForm({ state, onChange }) {
         onChange={onChange}
         name="salary"
         value={state.salary}
+        error={errors.salary}
       />
     </div>
   );
@@ -60,6 +65,7 @@ EmployeeForm.propTypes = {
     salary: string,
   }),
   onChange: func.isRequired,
+  errors: object,
 };
 
 export default EmployeeForm;

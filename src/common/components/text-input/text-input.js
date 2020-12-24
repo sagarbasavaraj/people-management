@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import HelperText from "../typograhy/helper-text";
+import Text from "../typograhy/text";
 import { string, func } from "prop-types";
 import "./text-input.scss";
 
@@ -16,6 +16,7 @@ function TextInput({
   inputClassName,
   type = "text",
   placeholder = "",
+  error = "",
 }) {
   const [focused, setFocused] = useState(false);
   const containerClassName = classnames("text-input__container", {
@@ -23,9 +24,11 @@ function TextInput({
   });
   const textInputClassName = classnames("text-input", {
     [inputClassName]: !!inputClassName,
+    error,
   });
   const labelClassName = classnames("input-label", {
     focused,
+    error
   });
 
   const handleFocus = (e) => {
@@ -58,7 +61,8 @@ function TextInput({
         placeholder={placeholder}
         data-testid={name}
       />
-      {helperText && <HelperText text={helperText} />}
+      {helperText && <Text text={helperText} />}
+      {error && <Text text={error} className="error" />}
     </div>
   );
 }
@@ -74,7 +78,8 @@ TextInput.propTypes = {
   className: string,
   inputClassName: string,
   type: string,
-  placeholder: string
+  placeholder: string,
+  error: string,
 };
 
 export default TextInput;

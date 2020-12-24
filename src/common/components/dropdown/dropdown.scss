@@ -6,13 +6,16 @@
   width: 100%;
   margin: 0 0 20px 0;
 
-
   .dropdown-label {
     color: $desaturated-dark-blue;
     font-size: $font-13;
 
     &.open {
       color: $soft-blue;
+    }
+
+    &.error {
+      color: $red;
     }
   }
 
@@ -45,6 +48,9 @@
         .dropdown-arrow {
           transform: rotate(180deg);
         }
+      }
+      &.error {
+        border-bottom: 1.5px solid $red;
       }
     }
 

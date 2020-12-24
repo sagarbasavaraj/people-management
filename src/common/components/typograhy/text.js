@@ -3,14 +3,14 @@ import classnames from "classnames";
 import { string } from "prop-types";
 import "./text.scss";
 
-function HelperText({ text, className }) {
-  const textClassName = classnames("helper-text", { [className]: !!className });
+function Text({ text, className }) {
+  const textClassName = classnames("text", { [className]: !!className });
   return <p className={textClassName}>{text}</p>;
 }
 
-HelperText.propTypes = {
+Text.propTypes = {
   text: string,
   className: string,
 };
 
-export default HelperText;
+export default Text;

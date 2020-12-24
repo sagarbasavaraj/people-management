@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import HelperText from "../typograhy/helper-text";
+import Text from "../typograhy/text";
 import classnames from "classnames";
 import { string, arrayOf, func } from "prop-types";
 import "./dropdown.scss";
@@ -22,11 +22,15 @@ function Dropdown({
   options = [],
   onSelect,
   helperText = "",
+  error = "",
 }) {
   const [open, setOpen] = useState(false);
   const dropdownSelectRef = useRef(null);
-  const triggerClassName = classnames("dropdown-select__trigger", { open });
-  const labelClassName = classnames("dropdown-label", { open });
+  const triggerClassName = classnames("dropdown-select__trigger", {
+    open,
+    error,
+  });
+  const labelClassName = classnames("dropdown-label", { open, error });
 
   const handleOutsideClick = (e) => {
     const select = dropdownSelectRef.current;
@@ -61,7 +65,11 @@ function Dropdown({
       <label id={label} className={labelClassName}>
         {label}
       </label>
-      <div className="dropdown-select" ref={dropdownSelectRef} data-testid="dropdown">
+      <div
+        className="dropdown-select"
+        ref={dropdownSelectRef}
+        data-testid="dropdown"
+      >
         <div className={triggerClassName}>
           <span>{value}</span>
           <i className="fas fa-chevron-down dropdown-arrow"></i>
@@ -92,7 +100,8 @@ function Dropdown({
           </div>
         )}
       </div>
-      {helperText && <HelperText text={helperText} />}
+      {helperText && <Text text={helperText} />}
+      {error && <Text text={error} className="error" />}
     </div>
   );
 }
@@ -109,7 +118,9 @@ Dropdown.propTypes = {
   /** Callback which will be called on select of option  */
   onSelect: func.isRequired,
   /** Helper text */
-  helperText: string
+  helperText: string,
+  /** error text */
+  error: string,
 };
 
 export default Dropdown;

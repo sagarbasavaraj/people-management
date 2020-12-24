@@ -24,6 +24,10 @@
       color: $soft-blue;
       line-height: 16px;
     }
+
+    &.error {
+      color: $red;
+    }
   }
 
   input[type="text"] {
@@ -40,5 +44,9 @@
     }
     outline: none;
     background: transparent;
+
+    &.error {
+      border-bottom: 1.5px solid $red;
+    }
   }
 }
