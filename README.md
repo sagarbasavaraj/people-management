@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Getting Started with People Management App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## App is built using:
+
+HTML,
+CSS,
+Javascript,
+React,
+webpack,
+Jest
+
+## To run App
+
+### Prerequisite
+
+Node
+NPM
 
 ## Available Scripts
 
@@ -39,32 +55,39 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Description
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+People Mangement  - App to manage people. User can create, read and edit people informations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Development
 
-### Code Splitting
+main branch is used for developement. Ideally need to use feature branches and raise PR to main branch.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Code base is structured based on screens (ex. home, add-edit-people). All related files are grouped together and kept in one folder. In this way it is easy to find files and also helps others to understand the code base easily.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+All the file names follow kabab case (ex., <>-<>.js) naming convention.
 
-### Making a Progressive Web App
+Component based design is followed.
+```
+src
+- common
+    - components - contain all common components
+    - helpers - contain all common helpers
+- home
+    - home.js - Main container reponsible for fetching data and feeding to child components.
+    - components
+        - page-header - Displayz page header
+        - people-list - Displays people informations.
+            - people-list-header - displays list header
+            - people-list-item - Display each people item.
+- add-edit-person
+    - add-edit-person.js - Component used to add and edit people.
+    - components
+        - employee-form.js
+    - validations.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+### Note
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App uses Indexdb to store data locally. No server is is used. This is just for assignment purpose.

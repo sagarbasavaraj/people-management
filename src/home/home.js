@@ -16,7 +16,7 @@ function Home() {
   }, []);
 
   const handleAddEditEmployeeBtnClick = (item) => {
-    navigateTo(`/add-edit-people/${(item && item.id) || ""}`);
+    navigateTo(`/add-edit-person/${(item && item.id) || ""}`);
   };
 
   return (

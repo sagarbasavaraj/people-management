@@ -16,7 +16,7 @@ import useNavigate from "../hooks/use-navigate";
 import useDataApi from "../hooks/use-data-api";
 import useForm from "../hooks/use-form";
 import { addEditPeopleScreenValidations } from "./validations";
-import "./add-edit-people.scss";
+import "./add-edit-person.scss";
 
 const INITIAL_STATE = {
   name: "",
@@ -26,7 +26,7 @@ const INITIAL_STATE = {
   salary: "",
 };
 
-function AddEditPeople() {
+function AddEditPerson() {
   let { id } = useParams();
   const title = id ? "Edit employee" : "Add a new employee";
   const description = id
@@ -54,7 +54,7 @@ function AddEditPeople() {
     addEditPeopleScreenValidations
   );
   useEffect(() => {
-    document.title = "Add Edit People";
+    document.title = "Add Edit Person";
   }, []);
 
   const navigate = () => {
@@ -86,4 +86,4 @@ function AddEditPeople() {
   );
 }
 
-export default AddEditPeople;
+export default AddEditPerson;

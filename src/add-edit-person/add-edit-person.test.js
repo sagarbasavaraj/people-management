@@ -1,7 +1,7 @@
 import { render, act } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router, Route } from "react-router-dom";
-import AddEditPeople from "./add-edit-people";
+import AddEditPerson from "./add-edit-people";
 import StorageService from "../service/storage-service";
 
 //mock storage service
@@ -16,7 +16,7 @@ const employee = {
   salary: "60,000",
 };
 
-describe("AddEditPeople", () => {
+describe("AddEditPerson", () => {
   describe("Add a new Employee", () => {
     let component = {};
     beforeEach(async () => {
@@ -29,7 +29,7 @@ describe("AddEditPeople", () => {
       component = render(
         <Router history={history}>
           <Route path="/add-edit-people/:id?">
-            <AddEditPeople />
+            <AddEditPerson />
           </Route>
         </Router>
       );
@@ -103,7 +103,7 @@ describe("AddEditPeople", () => {
       component = render(
         <Router history={history}>
           <Route path="/add-edit-people/:id?">
-            <AddEditPeople />
+            <AddEditPerson />
           </Route>
         </Router>
       );
