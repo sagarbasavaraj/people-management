@@ -2,7 +2,7 @@ import React from "react";
 import { string, func, shape, object } from "prop-types";
 import { TextInput, Dropdown } from "../../common/components";
 
-const COUNTRIES = ["Portugal", "India", "Germany"];
+const COUNTRIES = ["Portugal", "India", "Germany", "United States"];
 
 function EmployeeForm({ state, onChange, errors }) {
   return (

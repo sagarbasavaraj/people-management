@@ -1,5 +1,6 @@
 import React from "react";
 import { shape, string, element } from "prop-types";
+import {currencyFormater} from "../../common/helpers/formatters";
 
 function PeopleListItem({ item, editBtn }) {
   return (
@@ -11,7 +12,7 @@ function PeopleListItem({ item, editBtn }) {
       <label>{item.jobTitle}</label>
       <label>{item.country}</label>
       <label>
-        <span>{item.salary}</span>
+        <span>{currencyFormater(item.salary)} USD</span>
         <span className="salary-sub-text">per year</span>
       </label>
       {editBtn}
