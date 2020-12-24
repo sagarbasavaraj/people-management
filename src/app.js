@@ -9,6 +9,7 @@ import "./app.scss";
 //uses indexdb to store data
 StorageService.init();
 
+//Main App component
 function App() {
   return (
     <div className="app">

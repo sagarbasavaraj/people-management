@@ -7,6 +7,7 @@ const SET_STATE = `${ns}.setState`;
 const SET_ERRORS = `${ns}.setErrors`;
 const CLEAR_ERROR = `${ns}.clearError`;
 
+//reducer to handle form state
 const formReducer = (state = {}, action = {}) => {
   const { type, payload } = action;
 
@@ -24,6 +25,7 @@ const formReducer = (state = {}, action = {}) => {
   }
 };
 
+//reducer to handle error state
 const errorReducer = (state = {}, action = {}) => {
   const { type, payload } = action;
   switch (type) {
@@ -41,6 +43,14 @@ const errorReducer = (state = {}, action = {}) => {
   }
 };
 
+/**
+ * Custom hook to handle form operations
+ *
+ * @param {Object} [initialState={}]
+ * @param {func} callback
+ * @param {object} [validations={}]
+ * @returns {Array} state, onChange, errors and handleSubmit
+ */
 function useForm(initialState = {}, callback, validations = {}) {
   const [state, dispatch] = useReducer(formReducer, initialState);
   const [errors, dispatchError] = useReducer(errorReducer, {});

@@ -15,6 +15,7 @@ function Home() {
     document.title = "Home";
   }, []);
 
+  //edit add button click handler
   const handleAddEditEmployeeBtnClick = (item) => {
     navigateTo(`/add-edit-person/${(item && item.id) || ""}`);
   };

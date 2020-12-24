@@ -4,6 +4,37 @@ import Text from "../typograhy/text";
 import { string, func } from "prop-types";
 import "./text-input.scss";
 
+/**
+ *
+ * <TextInput /> component
+ * 
+ *  usage:
+ *   <TextInput
+        label="Name"
+        placeholder="e.g. Jane Doe"
+        helperText="First and last names"
+        onChange={onChange}
+        name="name"
+        value={state.name}
+        error={errors.name}
+      />
+ * 
+ * @param {Object} {
+ *   name - name property for text input,
+ *   value - value of text input,
+ *   label - label for text Input,
+ *   onChange - Gets called when the user clicks on the button,
+ *   helperText = "" - helper text,
+ *   onBlur - callback handler for blur event,
+ *   onFocus - callback handler for focus event,
+ *   className - custom style for text input container,
+ *   inputClassName - custom style for input element,
+ *   type = "text" - type of input
+ *   placeholder = "" - placeholder text, 
+ *   error = "" - error string to be displayed,
+ * }
+ * @returns {React.Element} TextInput
+ */
 function TextInput({
   name,
   value,
@@ -28,7 +59,7 @@ function TextInput({
   });
   const labelClassName = classnames("input-label", {
     focused,
-    error
+    error,
   });
 
   const handleFocus = (e) => {
@@ -68,17 +99,29 @@ function TextInput({
 }
 
 TextInput.propTypes = {
+  /** name property for text input */
   name: string.isRequired,
+  /**  value of text input*/
   value: string,
+  /** label for text Input */
   label: string.isRequired,
+  /** Gets called when the user clicks on the button */
   onChange: func.isRequired,
+  /** helper text */
   helperText: string,
+  /** callback handler for blur event */
   onBlur: func,
+  /** callback handler for focus event  */
   onFocus: func,
+  /** custom style for text input container */
   className: string,
+  /** custom style for text input element */
   inputClassName: string,
+  /** type of input */
   type: string,
+  /** placeholder text */
   placeholder: string,
+  /** error string */
   error: string,
 };
 

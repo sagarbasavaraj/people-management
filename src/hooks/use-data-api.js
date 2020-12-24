@@ -1,6 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import StorageService from "../service/storage-service";
 
+/**
+ * Custom hook to perform API operations.
+ * uses storage service to write and read data from IndexDb.
+ * @param {Object} props.url - query URL 
+ * @param {Object} props.query - query string
+ * @param {Object} props.initialData - form intitial data
+ */
 function useDataApi({ url, query, initialData }) {
   const [data, setData] = useState(initialData);
   const [isLoading, setIsLoading] = useState(false);

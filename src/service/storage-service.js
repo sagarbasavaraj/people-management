@@ -1,6 +1,10 @@
 import localForage from "localforage";
 import StorageError from "./storage-error";
 
+//StorageService
+//Used to read and write data to IndexDb.
+//Uses localForage which handles read write operations async.
+//By default localForage uses IndexDb fallbacks to local storage if it is not available.
 class StorageService {
   static init(config = {}) {
     if (!this.storage) {
