@@ -77,9 +77,9 @@ src
 - home
     - home.js - Main container reponsible for fetching data and feeding to child components.
     - components
-        - page-header - Displayz page header
+        - page-header - Displays page header
         - people-list - Displays people informations.
-        - people-list-header - displays list header
+        - people-list-header - Displays list header
         - people-list-item - Display each people item.
         - people-list.scss
     - home.test.js
