@@ -18,6 +18,10 @@ Jest
 Node
 NPM
 
+## Clone
+
+git@github.com:sagarbasavaraj/people-management.git
+
 ## Available Scripts
 
 In the project directory, you can run:
