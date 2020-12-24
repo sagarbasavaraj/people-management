@@ -97,7 +97,7 @@ src
 ```
 ### Note
 
-App uses Indexdb to store data locally. No server is used. This is just for assignment purpose.
+App uses Indexdb to store data locally. No server is used. This is just for assignment purposes.
 
 ## Improvements
 - Typescript can be used. For assignment purpose used JS.
