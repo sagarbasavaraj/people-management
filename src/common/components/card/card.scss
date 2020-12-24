@@ -4,13 +4,13 @@
   display: flex;
   background: $white;
   box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   flex-direction: column;
 
   .card-header {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 1.875rem;
     border-bottom: 1px solid $light-grey;
 
     .title {
@@ -28,6 +28,6 @@
     justify-content: center;
     align-items: center;
     background: $light-blue;
-    padding: 30px;
+    padding: 1.875rem;
   }
 }

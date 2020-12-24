@@ -37,7 +37,7 @@ $btn-fuild-width: 100%;
   }
 
   &.rounded {
-    border-radius: 50px;
+    border-radius: 3.125rem;
   }
 
   &.fluid {
@@ -50,7 +50,7 @@ $btn-fuild-width: 100%;
   }
 
   .icon {
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 
   &:hover:not(:disabled) {

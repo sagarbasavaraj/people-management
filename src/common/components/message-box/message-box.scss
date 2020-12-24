@@ -2,10 +2,10 @@
 
 .message-box__container {
   display: flex;
-  padding: 10px;
-  margin-top: 30px;
+  padding: 0.625rem;
+  margin-top: 1.875rem;
   background: $white;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   color: $dark-blue;
 
   &.success {

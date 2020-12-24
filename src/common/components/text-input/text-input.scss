@@ -7,7 +7,7 @@
   min-width: 0;
   flex-direction: column;
   vertical-align: top;
-  margin: 20px 0;
+  margin: 1.25rem 0;
 
   .input-label {
     display: block;
@@ -37,7 +37,7 @@
     font-size: $font-20;
     line-height: 24px;
     color: $steel-blue;
-    padding: 10px 0;
+    padding: 0.625rem 0;
 
     &:focus {
       border-bottom: 1.5px solid $soft-blue;

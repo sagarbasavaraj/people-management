@@ -4,7 +4,7 @@
   position: relative;
   display: grid;
   row-gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 
   li {
     display: grid;
@@ -17,7 +17,7 @@
       font-weight: 600;
       line-height: 20px;
       color: $desaturated-dark-blue;
-      padding: 0 30px;
+      padding: 0 1.875rem;
     }
 
     &.people-list-item {
@@ -25,7 +25,7 @@
       align-items: center;
       border-radius: 10px;
       box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
-      padding: 30px;
+      padding: 1.875rem;
 
       & > label {
         color: $steel-blue;
@@ -54,8 +54,8 @@
           color: $desaturated-dark-blue;
         }
       }
-      button[type = "button"] {
-          justify-self: end;
+      button[type="button"] {
+        justify-self: end;
       }
     }
   }

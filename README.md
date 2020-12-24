@@ -111,3 +111,4 @@ App uses Indexdb to store data locally. No server is used. This is just for assi
 - Dropdown component can be enhanced to handle keyboard events.
 - Internationalization support.
 - create story book for common components. It helps new joiness to understand components and play around with it.
+- sass features can be used to automate padding, margin and border.
