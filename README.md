@@ -104,3 +104,10 @@ src
 ### Note
 
 App uses Indexdb to store data locally. No server is used. This is just for assignment purpose.
+
+## Improvements
+- Typescript can be used. For assignment purpose used JS.
+- TextInput can be enhanced to handle basic vaildations and also formatting content.
+- Dropdown component can be enhanced to handle keyboard events.
+- Internationalization support.
+- create story book for common components. It helps new joiness to understand components and play around with it.
